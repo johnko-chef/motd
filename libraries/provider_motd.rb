@@ -31,8 +31,8 @@ class Chef::Provider::Motd < Chef::Provider::MotdTail
         else
           source new_resource.template_source
         end
-        owner  0
-        group  0
+        owner  'root'
+        group  node['motd']['rootgroup']
         mode   '0644'
         backup 0
         action :create

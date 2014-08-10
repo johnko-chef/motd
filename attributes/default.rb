@@ -18,5 +18,12 @@
 # limitations under the License.
 #
 
+default['motd']['rootgroup']    = case node['platform_family']
+                                     when 'freebsd'
+                                       'wheel'
+                                     else
+                                       'root'
+                                     end
+
 default['motd']['additional_text'] = nil
 default['motd']['managed_by'] = nil
