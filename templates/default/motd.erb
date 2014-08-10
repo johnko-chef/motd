@@ -1,0 +1,41 @@
+<%= node[:kernel][:os] %> <%= node[:kernel] [:release] %> (<%= node[:kernel][:ident] %>) #<%= node[:kernel][:version].split('#')[1].split('root').first %>
+**************************************************
+<% if node['motd']['managed_by'] && !node['motd']['managed_by'].empty? -%>
+THIS SYSTEM IS MANAGED BY <%= node['motd']['managed_by'] %>
+<% else -%>
+THIS NODE IS MANAGED BY CHEF
+<% end -%>
+last Chef run was at: <%= Time.now %>
+
+Chef-Client - <%= node.name %>
+Hostname: <%= node['cloud'] ? node['cloud']['public_hostname'] : node['fqdn'] %>
+<% if ! Chef::Config[:solo] -%>
+Chef Server: <%= Chef::Config[:chef_server_url] %>
+<% end -%>
+<% if node.chef_environment != '_default' -%>
+Environment: <%= node.chef_environment %>
+<% end -%>
+<% if node['roles'] && !node['roles'].empty? -%>
+Roles:
+<% node['roles'].each do |role| -%>
+  <%= role %>
+<% end -%>
+<% end -%>
+<% if node['recipes'] && !node['recipes'].empty? -%>
+Recipes:
+<% node['recipes'].each do |role| -%>
+  <%= role %>
+<% end -%>
+<% end -%>
+<% if node['tags'] && !node['tags'].empty? -%>
+Tags:
+<% node['tags'].each do |tag| -%>
+  <%= tag %>
+<% end -%>
+<% end -%>
+All activity may be monitored and reported.
+Authorized use only.
+**************************************************
+<% if node['motd']['additional_text'] && !node['motd']['additional_text'].empty? -%>
+<%= node['motd']['additional_text'] %>
+<% end -%>
