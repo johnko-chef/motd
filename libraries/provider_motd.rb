@@ -2,6 +2,8 @@
 # Cookbook Name:: motd
 # Provider:: motd
 #
+# Author:: Sean OMeara <someara@getchef.com>
+# Copyright 2013, Chef
 # Author:: John Ko <git@johnko.ca>
 # Copyright 2014, John Ko
 #

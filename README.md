@@ -50,8 +50,9 @@ For example,
 License and Author
 ==================
 
+Author:: Nathan Haneysmith <nathan@opscode.com>
+Copyright:: 2009-2012, Opscode, Inc
 Author:: John Ko <git@johnko.ca>
-
 Copyright:: 2014, John Ko
 
 Licensed under the Apache License, Version 2.0 (the "License");

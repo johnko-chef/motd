@@ -1,8 +1,10 @@
 #
-# Author:: John Ko <git@johnko.ca>
 # Cookbook Name:: motd
 # Recipe:: default
 #
+# Author:: John Dewey (<john@dewey.ws>)
+# Copyright 2012, John Dewey
+# Author:: John Ko <git@johnko.ca>
 # Copyright 2014, John Ko
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
